@@ -21,8 +21,7 @@ public class MainActivity extends AppCompatActivity {
     }
     public void reverseWord(View view) {
 
-        EditText editText = findViewById(R.id.word);
-        EditText answer = findViewById(R.id.Reverse);
+        EditText editText = findViewById(R.id.Reverse);
         String reverse="";
 
         //get the text written in the editText input field
@@ -31,7 +30,29 @@ public class MainActivity extends AppCompatActivity {
         for (int i = length - 1 ; i >= 0 ; i--)
             reverse = reverse + text.charAt(i);
         //Log.i("ok","ok");
-        answer.setText(reverse);
+        editText.setText(reverse);
+    }
+    public void getLength(View view){
+        EditText editText = findViewById(R.id.Reverse);
+        String text = editText.getText().toString();
+        int len=text.length();
+        String length=Integer.toString(len);
+        editText.setText(length);
+    }
+    public void getLower(View view){
+        EditText editText = findViewById(R.id.Reverse);
+        String text = editText.getText().toString();
+        editText.setText(text.toLowerCase());
+    }
+
+    public void getCapitalize(View view){
+        EditText editText = findViewById(R.id.Reverse);
+        String text = editText.getText().toString();
+        editText.setText(text.toUpperCase());
+    }
+    public void reset(View view){
+        EditText editText = findViewById(R.id.Reverse);
+        editText.getText().clear();
     }
     @Override
     protected void onPause() {
